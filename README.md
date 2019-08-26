@@ -1,1 +1,1 @@
-# TriviaAPI
+# Open Trivia API
