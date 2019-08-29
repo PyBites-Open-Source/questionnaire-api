@@ -1,7 +1,7 @@
-# OPENTRIVIA API
+### OPENTRIVIA API
 This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL db.
 
-# CONTRIBUTING
+### CONTRIBUTING
 ---
 
 name: Feature request
