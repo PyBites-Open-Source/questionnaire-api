@@ -1,31 +1,31 @@
 import os
 
-class Config(object):
-    """Parent Configuration"""
+class BaseConfig(object):
+    """Base Configuration"""
     DEBUG = False
     CSRF_ENABLED = True
     SECRET = os.getenv("SECRET")
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
 
-class DevelopmentConfig(Config):
+class DevelopmentConfig(BaseConfig):
     """Development Configuration"""
     DEBUG = True
 
 
-class TestingConfig(Config):
+class TestingConfig(BaseConfig):
     """Testing Configuration"""
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "postgresql://localhost/test_db"
     DEBUG = True
 
 
-class StagingConfig(Config):
+class StagingConfig(BaseConfig):
     """Staging Configuration"""
     DEBUG = True
 
 
-class ProductionConfig(Config):
+class ProductionConfig(BaseConfig):
     """Production Configuration"""
     DEBUG = False
     TESTING = False
