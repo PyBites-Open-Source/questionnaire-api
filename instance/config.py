@@ -1,7 +1,7 @@
 import os
 
 class Config(object):
-    """Parent configuration class."""
+    """Parent Configuration"""
     DEBUG = False
     CSRF_ENABLED = True
     SECRET = os.getenv("SECRET")
@@ -9,31 +9,31 @@ class Config(object):
 
 
 class DevelopmentConfig(Config):
-    """Configurations for Development"""
+    """Development Configuration"""
     DEBUG = True
 
 
 class TestingConfig(Config):
-    """Configurations for Testing, with a seperate database."""
+    """Testing Configuration"""
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "postgresql://localhost/test_db"
     DEBUG = True
 
 
 class StagingConfig(Config):
-    """Configurations for Staging."""
+    """Staging Configuration"""
     DEBUG = True
 
 
 class ProductionConfig(Config):
-    """Configurations for Production"""
+    """Production Configuration"""
     DEBUG = False
     TESTING = False
 
 
 app_config = {
-    "development": DevelopmentConfig,
-    "testing": TestingConfig,
     "staging": StagingConfig,
+    "testing": TestingConfig,
     "production": ProductionConfig,
+    "development": DevelopmentConfig,
 }
