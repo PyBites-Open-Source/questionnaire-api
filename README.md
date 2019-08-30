@@ -76,7 +76,22 @@ $ flask run.py
 | 5  | test_opentrivia.py | home for unit tests for our API.
 
 ##  :exclamation: Guideline
-- Indent using  4 spaces.
+
+#### Code Style
+
+In order to maintain the code style consistency across entire project we use a code formatter. Therefore, we kindly suggest you to do the same whenever you push commits to this project. 
+
+The python code formatter we chose is called black. Black is a great tool and it can be installed quickly by running 
+`pip install black`. It requires Python 3.6.0+ to run.
+
+__Usage__
+
+`black {source_file_or_directory}`
+
+For more details and available options, please check the [GitHub project](https://github.com/psf/black).
+
+#### Close Issues
+
 - Close issues using keywords: [how to ?](https://help.github.com/en/articles/closing-issues-using-keywords)
 
 ##  :page_facing_up: Resources
