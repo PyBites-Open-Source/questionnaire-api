@@ -1,6 +1,6 @@
 # Welcome to OpenTrivia project!
 
-We are glad to be hear. So? You want to contribute to our project? Great, 
+We are glad to be heare. So? You want to contribute to our project? Great, 
 bring here your best ideas. We are looking forward to work along with You 
 and to have fun by making this project better. 
 
@@ -10,8 +10,8 @@ Theoretically, everything wich can add value to this project is accepted. That's
 However, in order to give them a name, we are looking for the following contribution types:
 
 1. Code Enhancements: Did you spot an ugly code? Let's make it better.  
-2. Ideas: Do you have an idea about a new feature wich we ca add? Let's us know about it. Don't be shine.
-3. Bugs: Let's try to fix together as many bugs as we can. We know for sure that we will have some of them. :*(
+2. Ideas: Do you have an idea about a new feature wich we ca add? Let's us know about it.
+3. Bugs: Let's try to fix together as many bugs as we can. We know for sure that we will have some of them. :(
 
 ## Set up instructions
 
@@ -31,11 +31,11 @@ However, in order to give them a name, we are looking for the following contribu
 	origin
 	upstream
 
-	# Now, because we want our master to be up to date with the original forked 
-	# master, we have to set this using the below command.
+	# Now, because we want our master branch to be up to date with the forked branch 
+	# we need to set this using the below command.
 	$ git branch --set-upstream-to=upstream/master master
 	
-	# When you doing a pull, the changes will not gone comming from 
+	# When you are doing a pull, the changes will not gone coming from 
 	# origin/master, instead they will come from upstream/master.
 	git pull
 	```
