@@ -79,7 +79,7 @@ $ flask run.py
 
 - __Code Style__
 
-```
+
 In order to maintain the code style consistency across entire project we use a code formatter. Therefore, we kindly suggest you to do the same whenever you push commits to this project. 
 
 The python code formatter we chose is called black. Black is a great tool and it can be installed quickly by running 
@@ -91,18 +91,17 @@ or
 `python3.6 -m pip install black`
 
 It requires Python 3.6.0+ to run.
-```
+
 
 - __Usage__
-```
+
 `black {source_file_or_directory}`
 
 For more details and available options, please check the [GitHub project](https://github.com/psf/black).
-```
+
 - __Close Issues__
-```
+
 Close issues using keywords: [how to ?](https://help.github.com/en/articles/closing-issues-using-keywords)
-```
 
 ##  :page_facing_up: Resources
 - [Flask-API](http://www.flaskapi.org/) : Flask API is a drop-in replacement for Flask that provides an implementation of browsable APIs similar to what [Django REST framework](http://www.django-rest-framework.org) provides.
