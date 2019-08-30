@@ -1,7 +1,6 @@
-
-
-
-![opentrivia Logo](/logo/opentrivia.png)
+<p align="center">
+  <img src="./logo/opentrivia.png" width="220">
+</p>
 
 [![Open Issues](https://img.shields.io/github/issues/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/issues) [![Forks](https://img.shields.io/github/forks/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/network/members) [![Stars](https://img.shields.io/github/stars/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/stargazers) 
 
@@ -10,10 +9,10 @@
 
 - [About](#beginner-about)
 - [Usage](#zap-usage)
-  - [Installation](#electric_plug-installation)
-  - [Commands](#package-commands)
- - [File Structure](#file_folder-file-structure)
- - [Guideline](#exclamation-guideline)  
+ - [Installation](#electric_plug-installation)
+ - [Commands](#package-commands)
+- [File Structure](#file_folder-file-structure)
+- [Guideline](#exclamation-guideline)  
 - [Resources](#page_facing_up-resources)
 - [Gallery](#camera-gallery)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
