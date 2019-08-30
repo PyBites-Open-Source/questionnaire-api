@@ -9,8 +9,8 @@
 
 - [About](#beginner-about)
 - [Usage](#zap-usage)
- - [Installation](#electric_plug-installation)
- - [Commands](#package-commands)
+  - [Installation](#electric_plug-installation)
+  - [Commands](#package-commands)
 - [File Structure](#file_folder-file-structure)
 - [Guideline](#exclamation-guideline)  
 - [Resources](#page_facing_up-resources)
