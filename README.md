@@ -82,7 +82,15 @@ $ flask run.py
 In order to maintain the code style consistency across entire project we use a code formatter. Therefore, we kindly suggest you to do the same whenever you push commits to this project. 
 
 The python code formatter we chose is called black. Black is a great tool and it can be installed quickly by running 
-`pip install black`. It requires Python 3.6.0+ to run.
+
+`pip install black`.  
+
+or
+
+`python3.6 -m pip install black`
+
+It requires Python 3.6.0+ to run.
+
 
 __Usage__
 
