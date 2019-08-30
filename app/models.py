@@ -1,5 +1,6 @@
 from app import db
 
+
 class OpenTrivia(db.Model):
     """
     class representes trivia table
