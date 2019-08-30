@@ -50,17 +50,20 @@ $ flask run.py
 ```
 .
 ├── app
-│   ├── __init__.py
-│   └── models.py
+│   ├── __init__.py
+│   └── models.py
 ├── instance
-│   ├── __init__.py
-│   └── config.py
+│   ├── config.py
+│   └── __init__.py
 ├── LICENSE
+├── logo
+│   └── opentrivia.png
 ├── manage.py
 ├── README.md
 ├── requirements.txt
 ├── run.py
 └── test_opentrivia.py
+
 
 ```
 
