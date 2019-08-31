@@ -3,3 +3,4 @@ flask-sqlalchemy
 psycopg2
 flask-migrate
 Flask-API
+python-dotenv
