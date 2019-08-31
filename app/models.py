@@ -9,6 +9,7 @@ class OpenTrivia(db.Model):
     - fields which could be added   
         * id   
         * question 
+        * answers
         * question type : (T/F ,  MCQ)   
         * category : (Tech, Science etc.)  
         * difficulty  
@@ -17,3 +18,12 @@ class OpenTrivia(db.Model):
     """
 
     __tablename__ = "opentrivia"
+
+    id = db.Column(db.Integer, primary_key=True)
+    question = db.Column(db.String())
+    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
+    date_modified = db.Column(
+        db.DateTime,
+        default=db.func.current_timestamp(),
+        onupdate=db.func.current_timestamp(),
+    )
