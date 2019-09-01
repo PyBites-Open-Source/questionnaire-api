@@ -1,4 +1,5 @@
 import os
+import pathlib
 
 
 class BaseConfig(object):
@@ -20,8 +21,9 @@ class TestingConfig(BaseConfig):
     """Testing Configuration"""
 
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = "postgresql://localhost/test_db"
     DEBUG = True
+    DATABASE = pathlib.Path(__file__).parent.joinpath('instance/tododev.db')
+    SQLALCHEMY_DATABASE_URI = f'sqlite:///{DATABASE}'
 
 
 class StagingConfig(BaseConfig):
