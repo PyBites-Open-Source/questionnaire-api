@@ -22,8 +22,8 @@ class TestingConfig(BaseConfig):
 
     TESTING = True
     DEBUG = True
-    DATABASE = pathlib.Path(__file__).parent.joinpath('instance/tododev.db')
-    SQLALCHEMY_DATABASE_URI = f'sqlite:///{DATABASE}'
+    DATABASE = pathlib.Path(__file__).parent.joinpath("instance/tododev.db")
+    SQLALCHEMY_DATABASE_URI = f"sqlite:///{DATABASE}"
 
 
 class StagingConfig(BaseConfig):

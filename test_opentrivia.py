@@ -4,10 +4,9 @@ from app import create_app, db
 
 
 class TestModels(unittest.TestCase):
-
     def setUp(self):
         # create a test client
-        self.app = create_app('testing')
+        self.app = create_app("testing")
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
@@ -31,13 +30,14 @@ class TestModels(unittest.TestCase):
     def test_delete_question(self):
         pass
 
+
 class TestApiEndpoints(unittest.TestCase):
 
     API_URL = "http://localhost/api/v1/"
 
     def setUp(self):
         # create a test client
-        self.app = create_app('testing')
+        self.app = create_app("testing")
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
@@ -71,6 +71,5 @@ class TestApiEndpoints(unittest.TestCase):
         pass
 
 
-
 if __name__ == "__main__":
-    unittest.main(warnings='ignore')
+    unittest.main(warnings="ignore")
