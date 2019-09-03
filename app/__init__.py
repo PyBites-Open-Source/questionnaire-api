@@ -25,12 +25,12 @@ def create_app(config_name):
     api = Api(app)
 
     # Define routes
-    api.add_resource(Question, "/<question_id>")
+    api.add_resource(Question, "/api/v1/question/<question_id>")
 
     # Import blueprints
-    from app.api.endpoints import api_endpoints
+    from app.views import webapp
 
     # Register blueprints
-    app.register_blueprint(api_endpoints)
+    app.register_blueprint(webapp)
 
     return app

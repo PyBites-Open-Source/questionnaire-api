@@ -9,7 +9,7 @@ from flask_restful import Resource
 # TODO - Implement methods
 class Question(Resource):
     def get(self, question_id):
-        return "Hello World!"
+        return "Hello World! This is a question api"
 
     def put(self, question_id):
         pass
