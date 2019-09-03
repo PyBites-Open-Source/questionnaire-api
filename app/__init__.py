@@ -1,6 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask_api import FlaskAPI
+from flask import Flask
+from flask_restful import Api
 from config import app_config  # local
+from app.api.resources import Question
 
 # initialize sql alchemy
 db = SQLAlchemy()
@@ -9,8 +11,26 @@ db = SQLAlchemy()
 def create_app(config_name):
     """wraps creation of new flask object"""
 
-    app = FlaskAPI(__name__, instance_relative_config=True)
+    # Define app object
+    app = Flask(__name__, instance_relative_config=True)
+
+    # Load config
     app.config.from_object(app_config[config_name])
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+    # Init database
     db.init_app(app)  # connects app to db
+
+    # Init API
+    api = Api(app)
+
+    # Define routes
+    api.add_resource(Question, "/api/v1/question/<question_id>")
+
+    # Import blueprints
+    from app.views import webapp
+
+    # Register blueprints
+    app.register_blueprint(webapp)
+
     return app
