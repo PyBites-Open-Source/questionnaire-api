@@ -52,11 +52,14 @@ $ flask run.py
 ```
 .
 ├── app
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── resources.py
 │   ├── __init__.py
-│   └── models.py
-├── instance
-│   ├── config.py
-│   └── __init__.py
+│   ├── models.py
+│   └── views.py
+├── config.py
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── logo
 │   └── opentrivia.png
@@ -64,15 +67,17 @@ $ flask run.py
 ├── README.md
 ├── requirements.txt
 ├── run.py
+├── SCHEMA.md
 └── test_opentrivia.py
 
+3 directories, 15 files
 ```
 
 | No | File Name | Details 
 |----|------------|-------|
 | 1  | app\/\_\_init\_\_.py | home for `create_app()` function definition which wraps creation of new flask object and all API endpoints.
-| 2  | app\/models.py | home for `OpenTrivia` class which represents Trivia table.
-| 3  | instance\/config.py | home for configuration (development, testing, staging, production) settings. 
+| 2  | app\/models.py | home for models used in `OpenTrivia`. 
+| 3  | app\/views.py | This module will contain the routes to our app interface.
 | 4  | run.py | entry point to start our app.
 | 5  | test_opentrivia.py | home for unit tests for our API.
 
