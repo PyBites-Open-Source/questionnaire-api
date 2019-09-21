@@ -6,7 +6,7 @@
 
 `THIS PROJECT IS UNDER ACTIVE DEVELOPMENT, README MAY CHANGE EVERY ONCE IN A WHILE`
 
-## :ledger: Index
+## Index
 
 - [About](#beginner-about)
 - [Usage](#zap-usage)
@@ -20,13 +20,13 @@
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 - [License](#lock-license)
 
-##  :beginner: About
+## About
 This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL db.
 
-## :zap: Usage
+## Usage
 To use this project.
 
-###  :electric_plug: Installation
+### Installation
 - Install dependencies & export environment variables.
 
 ```bash
@@ -34,9 +34,8 @@ $ pip3 install -r requirements.txt
 $ export FLASK_APP="run.py"
 $ export FLASK_ENV=development
 $ export APP_SETTINGS="development"
-$ export DATABASE_URL="postgresql://localhost/flask_api"
 ```
-###  :package: Commands
+### Commands
 - Make sure to run this command before starting ```run.py```
 ```bash
 $ sudo -i -u postgres
@@ -46,7 +45,7 @@ $ sudo -i -u postgres
 $ flask run.py
 ```
 
-##  :file_folder: File Structure
+## File Structure
 - Add a file structure here with the basic details about files, below is an example.
 
 ```
@@ -81,7 +80,7 @@ $ flask run.py
 | 4  | run.py | entry point to start our app.
 | 5  | test_opentrivia.py | home for unit tests for our API.
 
-##  :exclamation: Guideline
+## Guideline
 
 - __Code Style__
 
@@ -109,17 +108,17 @@ For more details and available options, please check the [GitHub project](https:
 
 Close issues using keywords: [how to ?](https://help.github.com/en/articles/closing-issues-using-keywords)
 
-##  :page_facing_up: Resources
+## Resources
 - [Flask-API](http://www.flaskapi.org/) : Flask API is a drop-in replacement for Flask that provides an implementation of browsable APIs similar to what [Django REST framework](http://www.django-rest-framework.org) provides.
 
-##  :camera: Gallery
+## Gallery
 `Todo`
 
-## :busstop: Endpoints
+## Endpoints
 `Todo`
 
-## :star2: Credit/Acknowledgment
+## Credit/Acknowledgment
 [![Contributors](https://img.shields.io/github/contributors/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/graphs/contributors)
 
-##  :lock: License
+## License
 [![License](https://img.shields.io/github/license/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/blob/master/LICENSE)
