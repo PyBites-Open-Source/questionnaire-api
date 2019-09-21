@@ -1,8 +1,10 @@
-from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 from flask_restful import Api
-from config import app_config  # local
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
 from app.api.resources import Question
+from config import app_config
 
 # initialize sql alchemy
 db = SQLAlchemy()
@@ -20,6 +22,7 @@ def create_app(config_name):
 
     # Init database
     db.init_app(app)  # connects app to db
+    migrate = Migrate(app=app, db=db)
 
     # Init API
     api = Api(app)

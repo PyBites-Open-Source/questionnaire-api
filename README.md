@@ -4,7 +4,7 @@
 
 [![Open Issues](https://img.shields.io/github/issues/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/issues) [![Forks](https://img.shields.io/github/forks/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/network/members) [![Stars](https://img.shields.io/github/stars/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/stargazers) ![Build](https://img.shields.io/travis/code-monk08/opentrivia?style=for-the-badge)
 
-
+`THIS PROJECT IS UNDER ACTIVE DEVELOPMENT, README MAY CHANGE EVERY ONCE IN A WHILE`
 
 ## :ledger: Index
 

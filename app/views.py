@@ -4,7 +4,7 @@ api.py
 This module will contain the routes to our app interface.
 """
 from flask import Blueprint
-
+from app.models import Question
 
 webapp = Blueprint("api", __name__)
 

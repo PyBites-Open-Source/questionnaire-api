@@ -1,0 +1,20 @@
+version: '3'
+services:
+    web-server:
+        build:
+            context: .
+            dockerfile: ./docker/api-server/Dockerfile
+        links:
+            - db-server
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/opt/opentrivia
+    db-server:
+        build:
+            context: .
+            dockerfile: ./docker/db-server/Dockerfile
+        restart: always
+        container_name: db-server
+        ports:
+            - "5432:5432"
