@@ -14,7 +14,6 @@
   - [Commands](#package-commands)
 - [File Structure](#file_folder-file-structure)
 - [Guideline](#exclamation-guideline)  
-- [Resources](#page_facing_up-resources)
 - [Gallery](#camera-gallery)
 - [Endpoints](#busstop-Endpoints)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
@@ -107,9 +106,6 @@ For more details and available options, please check the [GitHub project](https:
 - __Close Issues__
 
 Close issues using keywords: [how to ?](https://help.github.com/en/articles/closing-issues-using-keywords)
-
-## Resources
-- [Flask-API](http://www.flaskapi.org/) : Flask API is a drop-in replacement for Flask that provides an implementation of browsable APIs similar to what [Django REST framework](http://www.django-rest-framework.org) provides.
 
 ## Gallery
 `Todo`
