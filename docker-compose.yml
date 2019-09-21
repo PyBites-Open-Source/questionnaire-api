@@ -15,3 +15,6 @@ services:
             context: .
             dockerfile: ./docker/db-server/Dockerfile
         restart: always
+        container_name: db-server
+        ports:
+            - "5432:5432"

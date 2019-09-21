@@ -2,6 +2,10 @@ import unittest
 
 from app import create_app, db
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class TestModels(unittest.TestCase):
     def setUp(self):
@@ -69,7 +73,3 @@ class TestApiEndpoints(unittest.TestCase):
 
     def test_api_get_delete_question(self):
         pass
-
-
-if __name__ == "__main__":
-    unittest.main(warnings="ignore")
