@@ -113,6 +113,20 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 
 ## Endpoints
 `Todo`
+- [ ] Add a question 
+- [ ] Add answer(s) to a question
+- [ ] Update a question
+- [ ] Update answer(s)
+- [ ] Delete a question (along with its answers)
+- [ ] Delete an answer
+- [ ] Get question(s)
+- [ ] Get all question(s) & their answer(s)
+- [ ] Get question category
+- [ ] Get question level (easy | medium | hard )
+- [ ] Get type of question (MCQ | T/F)
+
+feel free to add more functionalities
+endpoint url structure:  **/api/v1/. . .**
 
 ## Credit/Acknowledgment
 [![Contributors](https://img.shields.io/github/contributors/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/graphs/contributors)
