@@ -122,8 +122,8 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 - [ ] Get question(s)
 - [ ] Get all question(s) & their answer(s)
 - [ ] Get question category
-- [ ] Get question level (easy | medium | hard )
-- [ ] Get type of question (MCQ | T/F)
+- [ ] Get question level (easy \| medium \| hard )
+- [ ] Get type of question (MCQ \| T/F)
 
 feel free to add more functionalities
 endpoint url structure:  **/api/v1/. . .**
