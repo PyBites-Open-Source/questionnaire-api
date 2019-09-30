@@ -20,28 +20,69 @@
 - [License](#lock-license)
 
 ## About
-This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL db.
+Welcome to our project! 
+
+This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL db. 
 
 ## Usage
 To use this project.
 
 ### Installation
-- Install dependencies & export environment variables.
+
+**Development**
+
+If you want just to do a simple test run of the application, you can install and use it 
+with development config.
+
+- Clone the repository
+
+```bash
+$ git clone https://github.com/code-monk08/opentrivia.git
+```
+
+- Create the virtualenv and activate it
+
+```bash
+$ cd opentrivia
+$ python -m venv virtualenv
+$ source virtualenv/bin/activate # unix
+$ .\virtualenv\Scripts\activate  # windows
+```
+
+- Instal requirements
 
 ```bash
 $ pip3 install -r requirements.txt
-$ export FLASK_APP="run.py"
-$ export FLASK_ENV=development
-$ export APP_SETTINGS="development"
 ```
-### Commands
-- Make sure to run this command before starting ```run.py```
+
+- Run the application
+
 ```bash
-$ sudo -i -u postgres
+$ flask run
 ```
-- Start project using
+**Production**
+
+In order to use postgresql database ready for production, you need to use docker and to add some additional environment variables. 
+
+- Setup database 
+
 ```bash
-$ flask run.py
+# create .env file with the following environment variables. 
+POSTGRES_USER="trivia"
+POSTGRES_PASSWORD="trivia"
+POSTGRES_DB_PROD="opentrivia_prod"
+POSTGRES_DB_TEST="opentrivia_test"
+DB_PORT="5432"
+DB_HOST="localhost"
+
+# if you want to change these settings you have to change also the init.sql file 
+# from db folder. 
+```
+
+- Run the application
+
+```bash
+$ docker-compose up
 ```
 
 ## File Structure
@@ -49,29 +90,45 @@ $ flask run.py
 
 ```
 .
-├── app
-│   ├── api
-│   │   ├── __init__.py
-│   │   └── resources.py
-│   ├── __init__.py
-│   ├── models.py
-│   └── views.py
-├── config.py
-├── CONTRIBUTING.md
-├── LICENSE
-├── logo
-│   └── opentrivia.png
-├── manage.py
-├── README.md
-├── requirements.txt
-├── run.py
-├── SCHEMA.md
-└── test_opentrivia.py
-
-3 directories, 15 files
+|-- app
+|   |-- api
+|   |   |-- __init__.py
+|   |   `-- resources.py
+|   |-- __init__.py
+|   |-- models.py
+|   `-- views.py
+|-- db
+|   `-- init.sql
+|-- docker
+|   |-- api-server
+|   |   `-- Dockerfile
+|   `-- db-server
+|       `-- Dockerfile
+|-- instance
+|   `-- dev_opentrivia.db
+|-- logo
+|   `-- opentrivia.png
+|-- migrations
+|   |-- versions
+|   |   `-- d3595c7e8e54_.py
+|   |-- README
+|   |-- alembic.ini
+|   |-- env.py
+|   `-- script.py.mako
+|-- tests
+|   |-- __init__.py
+|   `-- test_opentrivia.py
+|-- CONTRIBUTING.md
+|-- LICENSE
+|-- README.md
+|-- config.py
+|-- docker-compose.yml
+|-- manage.py
+|-- requirements.txt
+`-- run.py
 ```
 
-| No | File Name | Details 
+| No | File Name  | Details 
 |----|------------|-------|
 | 1  | app\/\_\_init\_\_.py | home for `create_app()` function definition which wraps creation of new flask object and all API endpoints.
 | 2  | app\/models.py | home for models used in `OpenTrivia`. 
@@ -82,7 +139,6 @@ $ flask run.py
 ## Guideline
 
 - __Code Style__
-
 
 In order to maintain the code style consistency across entire project we use a code formatter. Therefore, we kindly suggest you to do the same whenever you push commits to this project. 
 
@@ -95,7 +151,6 @@ or
 `python3.6 -m pip install black`
 
 It requires Python 3.6.0+ to run.
-
 
 - __Usage__
 
