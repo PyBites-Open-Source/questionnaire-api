@@ -14,7 +14,7 @@ class TestModels(unittest.TestCase):
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
-        self.client = self.app.test_client
+        self.client = self.app.test_client()
 
         with self.app.app_context():
             # create all tables
@@ -34,13 +34,30 @@ class TestModels(unittest.TestCase):
     def test_delete_question(self):
         pass
 
+
 class TestWebapp(unittest.TestCase):
+    def setUp(self):
+        # create a test client
+        self.app = create_app("development")
+        # propagate the exceptions to the test client
+        self.app.testing = True
+        # testing client
+        self.client = self.app.test_client()
 
     def test_home_page(self):
-        pass
+        """ Test home page """
+        response = self.client.get("/")
+        self.assertEqual(response.status, "200 OK")
+        html = response.get_data(as_text=True)
+        self.assertIn("<title>Home Page</title>", html)
 
     def test_developer_page(self):
-        pass
+        """ Test developer page """
+        response = self.client.get("/developer")
+        self.assertEqual(response.status, "200 OK")
+        html = response.get_data(as_text=True)
+        self.assertIn("<title>Developer Page</title>", html)
+
 
 class TestApiEndpoints(unittest.TestCase):
 
@@ -52,7 +69,7 @@ class TestApiEndpoints(unittest.TestCase):
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
-        self.client = self.app.test_client
+        self.client = self.app.test_client()
 
         with self.app.app_context():
             # create all tables
