@@ -55,11 +55,7 @@ class TestWebapp(unittest.TestCase):
     def test_home_page(self):
         """ Test home page """
         response = self.client.get("/")
-<<<<<<< HEAD
         self.assertEqual(response.status, "200 OK")
-=======
-        self.assertEqual(response.status,"200 OK")
->>>>>>> origin
         html = response.get_data(as_text=True)
         self.assertIn("<title>Home Page</title>", html)
 
@@ -69,10 +65,6 @@ class TestWebapp(unittest.TestCase):
         self.assertEqual(response.status, "200 OK")
         html = response.get_data(as_text=True)
         self.assertIn("<title>Developer Page</title>", html)
-<<<<<<< HEAD
-
-=======
->>>>>>> origin
 
 class TestApiEndpoints(unittest.TestCase):
 
