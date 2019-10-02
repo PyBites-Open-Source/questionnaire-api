@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Developer Page{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <h1>API Resources</h1>
+    <p>Here you will see listed all the available resources along with their responses
+        details.
+    </p>
+
+    <h3>Resources</h3>
+    <p>Open Trivia supports the following resources:</p>
+    <ul>
+        <li>Questions</li>
+        <li>Answers</li>
+    </ul>
+
+    <h3>Endpoints</h3>
+    <p>For each resources you have available the following endpoints:</p>
+    <strong>Question</strong>
+    <ul>
+        <li>api/v1/questions</li>
+        <li>api/v1/questions/&lt;id&gt;</li>
+    </ul>
+    <strong>Answers</strong>
+    <ul>
+        <li>api/v1/answers</li>
+        <li>api/v1/answers/&lt;question&gt;</li>
+    </ul>
+</div>
+{% endblock content %}
