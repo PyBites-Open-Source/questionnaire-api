@@ -10,7 +10,7 @@ load_dotenv()
 class TestModels(unittest.TestCase):
     def setUp(self):
         # create a test client
-        self.app = create_app("testing")
+        self.app = create_app("development")
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
@@ -34,6 +34,13 @@ class TestModels(unittest.TestCase):
     def test_delete_question(self):
         pass
 
+class TestWebapp(unittest.TestCase):
+
+    def test_home_page(self):
+        pass
+
+    def test_developer_page(self):
+        pass
 
 class TestApiEndpoints(unittest.TestCase):
 
@@ -41,7 +48,7 @@ class TestApiEndpoints(unittest.TestCase):
 
     def setUp(self):
         # create a test client
-        self.app = create_app("testing")
+        self.app = create_app("development")
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
