@@ -100,6 +100,8 @@ $ docker-compose up
 │   │   └── resources.py
 │   ├── __init__.py
 │   ├── models.py
+│   ├── static
+│   │   └── swagger.json
 │   ├── templates
 │   │   ├── base.html
 │   │   ├── developer.html
@@ -135,6 +137,8 @@ $ docker-compose up
 └── tests
     ├── __init__.py
     └── test_opentrivia.py
+
+13 directories, 30 files
 ```
 
 | No | File Name  | Details 
@@ -175,6 +179,12 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 `Todo`
 
 ## Endpoints
+
+`Available Views`
+- [x] http://127.0.0.1:5000/            #Home Page
+- [x] http://127.0.0.1:5000/developer   #Developer Page
+- [x] http://127.0.0.1:5000/swagger/    #Swagger UI
+
 `Todo`
 - [ ] Add a question 
 - [ ] Add answer(s) to a question
@@ -187,6 +197,8 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 - [ ] Get question category
 - [ ] Get question level (easy \| medium \| hard )
 - [ ] Get type of question (MCQ \| T/F)
+
+
 
 feel free to add more functionalities
 endpoint url structure:  **/api/v1/. . .**
