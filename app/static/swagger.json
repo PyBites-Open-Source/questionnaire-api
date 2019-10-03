@@ -1,0 +1,15 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "A free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL database",
+      "version": "1.0.0",
+      "title": "opentrivia",
+      "contact": {
+        "email": "mayank.singh081997@gmail.com"
+      },
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    }
+  }

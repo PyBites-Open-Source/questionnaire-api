@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_swagger_ui import get_swaggerui_blueprint
 
 from app.api.resources import Question
 from config import app_config
@@ -15,6 +16,13 @@ def create_app(config_name):
 
     # Define app object
     app = Flask(__name__, instance_relative_config=True)
+
+    # Swagger
+    SWAGGER_URL = "/swagger"
+    API_URL = "/static/swagger.json"
+    SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
+        SWAGGER_URL, API_URL, config={"app_name": "OpenTrivia API"}
+    )
 
     # Load config
     app.config.from_object(app_config[config_name])
@@ -35,5 +43,6 @@ def create_app(config_name):
 
     # Register blueprints
     app.register_blueprint(webapp)
+    app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 
     return app
