@@ -100,6 +100,8 @@ $ docker-compose up
 │   │   └── resources.py
 │   ├── __init__.py
 │   ├── models.py
+│   ├── static
+│   │   └── swagger.json
 │   ├── templates
 │   │   ├── base.html
 │   │   ├── developer.html
@@ -135,6 +137,8 @@ $ docker-compose up
 └── tests
     ├── __init__.py
     └── test_opentrivia.py
+
+13 directories, 30 files
 ```
 
 | No | File Name  | Details 
