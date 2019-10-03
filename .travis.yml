@@ -8,4 +8,4 @@ install:
 
 # command to run tests
 script:
-    - python test_opentrivia.py
+    - python -m unittest

@@ -9,16 +9,16 @@
 
 ## Index
 
-- [About](#beginner-about)
-- [Usage](#zap-usage)
-  - [Installation](#electric_plug-installation)
-  - [Commands](#package-commands)
-- [File Structure](#file_folder-file-structure)
-- [Guideline](#exclamation-guideline)  
-- [Gallery](#camera-gallery)
-- [Endpoints](#busstop-Endpoints)
-- [Credit/Acknowledgment](#star2-creditacknowledgment)
-- [License](#lock-license)
+- [Index](#index)
+- [About](#about)
+- [Usage](#usage)
+  - [Installation](#installation)
+- [File Structure](#file-structure)
+- [Guideline](#guideline)
+- [Gallery](#gallery)
+- [Endpoints](#endpoints)
+- [Credit/Acknowledgment](#creditacknowledgment)
+- [License](#license)
 
 ## About
 This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL database, also this will be a source for a minimal quizzing website which will also let contributors add new questions in multiple categories and as MCQ or T/F types. 
@@ -53,6 +53,11 @@ $ .\virtualenv\Scripts\activate  # windows
 ```bash
 $ pip3 install -r requirements.txt
 ```
+- Create database and apply migrations
+
+```
+$ flask db upgrade
+```  
 
 - Run the application
 
