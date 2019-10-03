@@ -9,16 +9,16 @@
 
 ## Index
 
-- [About](#beginner-about)
-- [Usage](#zap-usage)
-  - [Installation](#electric_plug-installation)
-  - [Commands](#package-commands)
-- [File Structure](#file_folder-file-structure)
-- [Guideline](#exclamation-guideline)  
-- [Gallery](#camera-gallery)
-- [Endpoints](#busstop-Endpoints)
-- [Credit/Acknowledgment](#star2-creditacknowledgment)
-- [License](#lock-license)
+- [Index](#index)
+- [About](#about)
+- [Usage](#usage)
+  - [Installation](#installation)
+- [File Structure](#file-structure)
+- [Guideline](#guideline)
+- [Gallery](#gallery)
+- [Endpoints](#endpoints)
+- [Credit/Acknowledgment](#creditacknowledgment)
+- [License](#license)
 
 ## About
 This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL database, also this will be a source for a minimal quizzing website which will also let contributors add new questions in multiple categories and as MCQ or T/F types. 
@@ -53,6 +53,11 @@ $ .\virtualenv\Scripts\activate  # windows
 ```bash
 $ pip3 install -r requirements.txt
 ```
+- Create database and apply migrations
+
+```
+$ flask db upgrade
+```  
 
 - Run the application
 
@@ -89,42 +94,47 @@ $ docker-compose up
 
 ```
 .
-|-- app
-|   |-- api
-|   |   |-- __init__.py
-|   |   `-- resources.py
-|   |-- __init__.py
-|   |-- models.py
-|   `-- views.py
-|-- db
-|   `-- init.sql
-|-- docker
-|   |-- api-server
-|   |   `-- Dockerfile
-|   `-- db-server
-|       `-- Dockerfile
-|-- instance
-|   `-- dev_opentrivia.db
-|-- logo
-|   `-- opentrivia.png
-|-- migrations
-|   |-- versions
-|   |   `-- d3595c7e8e54_.py
-|   |-- README
-|   |-- alembic.ini
-|   |-- env.py
-|   `-- script.py.mako
-|-- tests
-|   |-- __init__.py
-|   `-- test_opentrivia.py
-|-- CONTRIBUTING.md
-|-- LICENSE
-|-- README.md
-|-- config.py
-|-- docker-compose.yml
-|-- manage.py
-|-- requirements.txt
-`-- run.py
+├── app
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── resources.py
+│   ├── __init__.py
+│   ├── models.py
+│   ├── templates
+│   │   ├── base.html
+│   │   ├── developer.html
+│   │   └── home.html
+│   └── views.py
+├── config.py
+├── _config.yml
+├── CONTRIBUTING.md
+├── db
+│   └── init.sql
+├── docker
+│   ├── api-server
+│   │   └── Dockerfile
+│   └── db-server
+│       └── Dockerfile
+├── docker-compose.yml
+├── instance
+│   └── dev_opentrivia.db
+├── LICENSE
+├── logo
+│   └── opentrivia.png
+├── manage.py
+├── migrations
+│   ├── alembic.ini
+│   ├── env.py
+│   ├── README
+│   ├── script.py.mako
+│   └── versions
+│       └── d3595c7e8e54_.py
+├── README.md
+├── requirements.txt
+├── run.py
+└── tests
+    ├── __init__.py
+    └── test_opentrivia.py
 ```
 
 | No | File Name  | Details 

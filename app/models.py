@@ -33,7 +33,7 @@ class Question(db.Model):
 
     # Relationship one-to-many
     category = db.relationship(
-        "Category", backref=db.backref("question_category", lazy="dynamic")
+        "Category", backref=db.backref("questions", lazy="dynamic")
     )
 
     def __init__(self, question, categoryid, level):
@@ -59,7 +59,7 @@ class Answer(db.Model):
 
     # Relationship one-to-many
     question = db.relationship(
-        "Question", backref=db.backref("question_answers", lazy="dynamic")
+        "Question", backref=db.backref("answers", lazy="dynamic")
     )
 
     def __init__(self, answer, questionid, correct_answer):
