@@ -1,9 +1,8 @@
 from flask import Flask
+from flask_migrate import Migrate
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
-from app.api.resources import Question
 from config import app_config
 
 # initialize sql alchemy
@@ -27,13 +26,16 @@ def create_app(config_name):
     # Init API
     api = Api(app)
 
-    # Define routes
-    api.add_resource(Question, "/api/v1/question/<question_id>")
-
     # Import blueprints
     from app.views import webapp
+    from app.api.routes.questions import question_bp
+    from app.api.routes.answers import answer_bp
+    from app.api.routes.categories import category_bp
 
     # Register blueprints
     app.register_blueprint(webapp)
+    app.register_blueprint(question_bp, url_prefix="/api")
+    app.register_blueprint(answer_bp, url_prefix="/api")
+    app.register_blueprint(category_bp, url_prefix="/api")
 
     return app
