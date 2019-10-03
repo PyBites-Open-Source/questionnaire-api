@@ -94,42 +94,47 @@ $ docker-compose up
 
 ```
 .
-|-- app
-|   |-- api
-|   |   |-- __init__.py
-|   |   `-- resources.py
-|   |-- __init__.py
-|   |-- models.py
-|   `-- views.py
-|-- db
-|   `-- init.sql
-|-- docker
-|   |-- api-server
-|   |   `-- Dockerfile
-|   `-- db-server
-|       `-- Dockerfile
-|-- instance
-|   `-- dev_opentrivia.db
-|-- logo
-|   `-- opentrivia.png
-|-- migrations
-|   |-- versions
-|   |   `-- d3595c7e8e54_.py
-|   |-- README
-|   |-- alembic.ini
-|   |-- env.py
-|   `-- script.py.mako
-|-- tests
-|   |-- __init__.py
-|   `-- test_opentrivia.py
-|-- CONTRIBUTING.md
-|-- LICENSE
-|-- README.md
-|-- config.py
-|-- docker-compose.yml
-|-- manage.py
-|-- requirements.txt
-`-- run.py
+├── app
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── resources.py
+│   ├── __init__.py
+│   ├── models.py
+│   ├── templates
+│   │   ├── base.html
+│   │   ├── developer.html
+│   │   └── home.html
+│   └── views.py
+├── config.py
+├── _config.yml
+├── CONTRIBUTING.md
+├── db
+│   └── init.sql
+├── docker
+│   ├── api-server
+│   │   └── Dockerfile
+│   └── db-server
+│       └── Dockerfile
+├── docker-compose.yml
+├── instance
+│   └── dev_opentrivia.db
+├── LICENSE
+├── logo
+│   └── opentrivia.png
+├── manage.py
+├── migrations
+│   ├── alembic.ini
+│   ├── env.py
+│   ├── README
+│   ├── script.py.mako
+│   └── versions
+│       └── d3595c7e8e54_.py
+├── README.md
+├── requirements.txt
+├── run.py
+└── tests
+    ├── __init__.py
+    └── test_opentrivia.py
 ```
 
 | No | File Name  | Details 
