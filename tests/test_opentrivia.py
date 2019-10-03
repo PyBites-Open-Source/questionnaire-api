@@ -1,6 +1,7 @@
 import unittest
 
 from app import create_app, db
+from app.models import Category
 
 from dotenv import load_dotenv
 
@@ -24,6 +25,16 @@ class TestModels(unittest.TestCase):
         with self.app.app_context():
             db.session.remove()
             db.drop_all()
+
+    def test_create_new_category(self):
+        """ Test new category create """
+        new_category = Category("Data Science")
+        db.session.add(new_category)
+        db.session.commit()
+
+        category = Category.query.get(1)
+        self.assertEqual(category.name, "Data Science")
+
 
 
 class TestWebapp(unittest.TestCase):
