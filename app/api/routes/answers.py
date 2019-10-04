@@ -4,12 +4,6 @@ from flask import Blueprint
 answer_bp = Blueprint("answer_api", __name__)
 
 
-@answer_bp.route("/answers", methods=["GET"])
-def get_answers():
-    """ Get all answers. """
-    pass
-
-
 @answer_bp.route("/answers/<int:id>", methods=["GET"])
 def get_answer(id):
     """ Get answer. """
