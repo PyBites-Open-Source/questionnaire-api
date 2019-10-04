@@ -43,8 +43,8 @@ def create_app(config_name):
     # Register blueprints
     app.register_blueprint(webapp)
     app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
-    app.register_blueprint(question_bp, url_prefix="/api")
-    app.register_blueprint(answer_bp, url_prefix="/api")
-    app.register_blueprint(category_bp, url_prefix="/api")
+    app.register_blueprint(question_bp, url_prefix="/api/v1")
+    app.register_blueprint(answer_bp, url_prefix="/api/v1")
+    app.register_blueprint(category_bp, url_prefix="/api/v1")
 
     return app
