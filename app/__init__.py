@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_migrate import Migrate
-from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 
 from config import app_config
@@ -30,9 +29,6 @@ def create_app(config_name):
     # Init database
     db.init_app(app)  # connects app to db
     migrate = Migrate(app=app, db=db)
-
-    # Init API
-    api = Api(app)
 
     # Import blueprints
     from app.views import webapp
