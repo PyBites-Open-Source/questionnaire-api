@@ -1,10 +1,9 @@
 import unittest
 
-from app import create_app, db
-
-from app.models import Category, Question, Answer
-
 from dotenv import load_dotenv
+
+from app import create_app, db
+from app.models import Answer, Category, Question
 
 load_dotenv()
 

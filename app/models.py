@@ -44,6 +44,17 @@ class Question(db.Model):
     def __repr__(self):
         return f"<Question> {self.question}"
 
+    def to_dict(self):
+        """ Return question details as dict. """
+        data = {
+            "id": self.id,
+            "question": self.question,
+            "category": self.category,
+            "level": self.level,
+            "_links": {},
+        }
+        return data
+
 
 class Answer(db.Model):
     """
