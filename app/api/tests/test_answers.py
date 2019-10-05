@@ -27,12 +27,12 @@ class TestAnswers(unittest.TestCase):
 
     def answer(self):
         """ Help method with answer data. """
-        data = {"answer": "Test Answer", "question_id": "1", "correct_answer": "false"}
+        data = {"answer": "Test Answer", "question_id": "1", "correct_answer": "false",}
         return data
 
     def test_add_new_answer(self):
         """ Tedd add new answer. """
-        response = self.client.post("/api/answers", data=self.answer)
+        response = self.client.post("/api/answers", data=self.answer())
         self.assertEqual(response.status_code, 201)
         self.assertEqual("Test Answer", str(response.data))
 

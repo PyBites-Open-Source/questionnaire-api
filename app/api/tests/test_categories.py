@@ -3,7 +3,7 @@ import unittest
 from dotenv import load_dotenv
 
 from app import create_app, db
-from app.models import Category
+from app.models.category import Category
 
 
 class TestCategories(unittest.TestCase):
@@ -35,15 +35,36 @@ class TestCategories(unittest.TestCase):
 
     def test_get_a_specific_category(self):
         """ Test get a specific category. """
+        category = Category("Test Category")
+        category.create()
+        response = self.client.get("/api/categories/1")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("Test Category", str(response.data))
 
     def test_get_all_categories(self):
         """ Test get all categories. """
-        pass
+        category1 = Category("Category 1")
+        category2 = Category("Category 2")
+        category1.create()
+        category2.create()
+        response = self.client.get("/api/categories")
+        self.assertEqual(response.status_code, 200)
 
     def test_update_a_category(self):
         """ Test update a category. """
-        pass
+        category = Category("Category Test")
+        category.create()
+        updated_category = {"name": "Update Category"}
+        response = self.client.put("/api/categories/1", data=updated_category)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("Update Category", str(response.data))
 
     def test_delete_a_specific_category(self):
         """ Delete a specific category """
-        pass
+        category = Category("Test Category")
+        category.create()
+        response = self.client.delete("/api/categories/1")
+        self.assertEqual(response.status_code, 200)
+        # Try to get again the same category
+        response = self.client.get("/api/categories/1")
+        self.assertEqual(response.status_code, 404)

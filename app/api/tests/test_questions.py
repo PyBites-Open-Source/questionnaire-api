@@ -31,13 +31,13 @@ class TestQuestions(unittest.TestCase):
             "question": "Test question",
             "category_id": "1",
             "level": "Difficult",
-            "true_false_question": "false"
+            "true_false_question": "false",
         }
         return data
 
     def test_add_new_question(self):
         """ Test add new question route. """
-        response = self.client.post("api/questions" data=self.question())
+        response = self.client.post("api/questions", data=self.question())
         self.assertEqual(response.status_code, 201)
         self.assertIn("Test question", str(response.data))
 
