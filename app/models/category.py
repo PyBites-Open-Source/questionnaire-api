@@ -1,12 +1,12 @@
 from app import db
 
+
 class Category(db.Model):
     """
     Category Model
 
     Represents the category table.
     """
-    __tablename__ = "category"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
@@ -15,7 +15,7 @@ class Category(db.Model):
         self.name = name
 
     def __repr__(self):
-        return f"<Category> {self.name}
+        return f"<Category> {self.name}"
 
     def create(self):
         db.session.add(self)

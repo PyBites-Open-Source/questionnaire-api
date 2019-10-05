@@ -8,8 +8,6 @@ class Answer(db.Model):
     Represents answer table.
     """
 
-    __tablename__ = "answer"
-
     id = db.Column(db.Integer, primary_key=True)
     answer = db.Column(db.String(80), nullable=False)
     question_id = db.Column(db.Integer, db.ForeignKey("question.id"), nullable=False)
@@ -20,9 +18,9 @@ class Answer(db.Model):
         "Question", backref=db.backref("answers", lazy="dynamic")
     )
 
-    def __init__(self, answer, questionid, correct_answer):
+    def __init__(self, answer, question_id, correct_answer):
         self.answer = answer
-        self.questionid = questionid
+        self.question_id = question_id
         self.correct_answer = correct_answer
 
     def __repr__(self):

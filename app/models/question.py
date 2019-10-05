@@ -1,4 +1,6 @@
 from app import db
+from app.models.answer import Answer
+from app.models.category import Category
 
 
 class Question(db.Model):
@@ -8,11 +10,9 @@ class Question(db.Model):
     Represents the question table.
     """
 
-    __tablename__ = "question"
-
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(120), nullable=False)
-    categoryid = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
     level = db.Column(db.String(30), nullable=False)
     true_false_question = db.Column(db.Boolean)
 
@@ -21,10 +21,11 @@ class Question(db.Model):
         "Category", backref=db.backref("questions", lazy="dynamic")
     )
 
-    def __init__(self, question, categoryid, level):
+    def __init__(self, question, category_id, level, true_false_question):
         self.question = question
-        self.categoryid = categoryid
+        self.category_id = category_id
         self.level = level
+        self.true_false_question = true_false_question
 
     def __repr__(self):
         return f"<Question> {self.question}"
@@ -44,7 +45,7 @@ class Question(db.Model):
         data = {
             "id": self.id,
             "question": self.question,
-            "category": self.category,
+            "category_id": self.category_id,
             "level": self.level,
             "_links": {},
         }
