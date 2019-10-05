@@ -1,8 +1,12 @@
 import unittest
 
 from dotenv import load_dotenv
+from flask import json
 
 from app import create_app, db
+from app.models.answer import Answer
+from app.models.category import Category
+from app.models.question import Question
 
 
 class TestQuestions(unittest.TestCase):
@@ -19,12 +23,23 @@ class TestQuestions(unittest.TestCase):
             db.create_all()
             db.session.commit()
         self.app.app_context().push()
+        self.questions_data()
 
     def tearDown(self):
         with self.app.app_context():
             db.session.remove()
             db.drop_all()
-    
+
+    def questions_data(self):
+        """ Setup question data. """
+        category = Category("Test Category").create()
+        question1 = Question(
+            "Test Question 1", category.id, "Difficult", False
+        ).create()
+        question2 = Question(
+            "Test Question 2", category.id, "Difficult", False
+        ).create()
+
     def question(self):
         """ Help method with question data. """
         data = {
@@ -37,23 +52,46 @@ class TestQuestions(unittest.TestCase):
 
     def test_add_new_question(self):
         """ Test add new question route. """
-        response = self.client.post("api/questions", data=self.question())
+        response = self.client.post(
+            "/api/questions", data=self.question(), content_type="application/json"
+        )
         self.assertEqual(response.status_code, 201)
-        self.assertIn("Test question", str(response.data))
-
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("New object created.", data["message"])
 
     def test_get_a_question(self):
         """ Test get a question. """
-        pass
+        response = self.client.get("/api/questions/1", content_type="application/json")
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Test Question 1", data["question"])
 
     def test_get_all_questions(self):
         """ Test get all questions. """
-        pass
+        response = self.client.get("/api/questions", content_type="application/json")
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual(2, len(data))
 
     def test_update_a_question(self):
         """ Test update a question. """
-        pass
+        question = self.question()
+        question["name"] = "Updated question"
+        response = self.client.put(
+            "/api/questions/1", data=question, content_type="application/json"
+        )
+        self.assertEqual(response.status_code, 201)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Updated question", data["question"])
 
     def delete_a_question(self):
         """ Test delete a question. """
-        pass
+        response = self.client.delete(
+            "/api/questions/1", content_type="application/json"
+        )
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Object deleted.", data["message"])
+        # Trying again to access the same question
+        response = self.client.get("/api/questions/1", content_type="application/json")
+        self.assertEqual(response.status_code, 404)

@@ -30,6 +30,7 @@ class Answer(db.Model):
         """ Save object to database. """
         db.session.add(self)
         db.session.commit()
+        return self
 
     def delete(self):
         """ Delete object from database. """

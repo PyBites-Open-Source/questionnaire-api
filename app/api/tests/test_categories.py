@@ -1,6 +1,7 @@
 import unittest
 
 from dotenv import load_dotenv
+from flask import json
 
 from app import create_app, db
 from app.models.category import Category
@@ -21,50 +22,59 @@ class TestCategories(unittest.TestCase):
             db.create_all()
             db.session.commit()
         self.app.app_context().push()
+        self.category_data()
 
     def tearDown(self):
         with self.app.app_context():
             db.session.remove()
             db.drop_all()
 
+    def category_data(self):
+        """ Setup category data. """
+        category1 = Category("Test Category 1").create()
+        category2 = Category("Test Category 2").create()
+
     def test_add_new_category(self):
         """ Test add new category route. """
-        response = self.client.post("/api/categories", data=self.category)
+        response = self.client.post(
+            "/api/categories", data=self.category, content_type="application/json"
+        )
         self.assertEqual(response.status_code, 201)
-        self.assertIn("Test Category", str(response.data))
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("New object created.", data["message"])
 
     def test_get_a_specific_category(self):
         """ Test get a specific category. """
-        category = Category("Test Category")
-        category.create()
-        response = self.client.get("/api/categories/1")
+        response = self.client.get("/api/categories/1", content_type="application/json")
         self.assertEqual(response.status_code, 200)
-        self.assertIn("Test Category", str(response.data))
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Test Category 1", data["name"])
 
     def test_get_all_categories(self):
         """ Test get all categories. """
-        category1 = Category("Category 1")
-        category2 = Category("Category 2")
-        category1.create()
-        category2.create()
-        response = self.client.get("/api/categories")
+        response = self.client.get("/api/categories", content_type="application/json")
         self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual(2, len(data))
 
     def test_update_a_category(self):
         """ Test update a category. """
-        category = Category("Category Test")
-        category.create()
         updated_category = {"name": "Update Category"}
-        response = self.client.put("/api/categories/1", data=updated_category)
+        response = self.client.put(
+            "/api/categories/1", data=updated_category, content_type="application/json"
+        )
         self.assertEqual(response.status_code, 200)
-        self.assertIn("Update Category", str(response.data))
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Update Category", data["name"])
 
     def test_delete_a_specific_category(self):
         """ Delete a specific category """
-        category = Category("Test Category")
-        category.create()
-        response = self.client.delete("/api/categories/1")
+        response = self.client.delete(
+            "/api/categories/1", content_type="application/json"
+        )
         self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Object deleted.", data["message"])
         # Try to get again the same category
-        response = self.client.get("/api/categories/1")
+        response = self.client.get("/api/categories/1", content_type="application/json")
         self.assertEqual(response.status_code, 404)
