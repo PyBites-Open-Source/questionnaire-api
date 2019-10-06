@@ -2,7 +2,7 @@
   <img src="./logo/opentrivia.png" width="220">
 </p>
 
-[![Open Issues](https://img.shields.io/github/issues/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/issues) [![Forks](https://img.shields.io/github/forks/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/network/members) [![Stars](https://img.shields.io/github/stars/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/stargazers) ![Build](https://img.shields.io/travis/code-monk08/opentrivia?style=for-the-badge) ![Maintained](https://img.shields.io/maintenance/yes/2019?style=for-the-badge&logo=github)  ![Made with Python](https://img.shields.io/badge/Made%20with-Python-blueviolet?style=for-the-badge&logo=python)  ![Open Source Love](https://img.shields.io/badge/Open%20Source-%E2%99%A5-red?style=for-the-badge&logo=open-source-initiative)  ![Built with Love](https://img.shields.io/badge/Built%20With-%E2%99%A5-critical?style=for-the-badge&logo=ko-fi) [![PyBites/Opentrivia](https://img.shields.io/badge/PyBites%2FOpentrivia-Chat-success?logo=slack&style=for-the-badge)](https://app.slack.com/client/T4SJVFM8C/CMYR582R4)
+[![Open Issues](https://img.shields.io/github/issues/PyBites-Open-Source/questionnaire-api?style=for-the-badge)](https://github.com/PyBites-Open-Source/questionnaire-api/issues) [![Forks](https://img.shields.io/github/forks/PyBites-Open-Source/questionnaire-api?style=for-the-badge)](https://github.com/PyBites-Open-Source/questionnaire-api/network/members) [![Stars](https://img.shields.io/github/stars/PyBites-Open-Source/questionnaire-api?style=for-the-badge)](https://github.com/PyBites-Open-Source/questionnaire-api/stargazers) ![Build](https://img.shields.io/travis/PyBites-Open-Source/questionnaire-api?style=for-the-badge) ![Maintained](https://img.shields.io/maintenance/yes/2019?style=for-the-badge&logo=github)  ![Made with Python](https://img.shields.io/badge/Made%20with-Python-blueviolet?style=for-the-badge&logo=python)  ![Open Source Love](https://img.shields.io/badge/Open%20Source-%E2%99%A5-red?style=for-the-badge&logo=open-source-initiative)  ![Built with Love](https://img.shields.io/badge/Built%20With-%E2%99%A5-critical?style=for-the-badge&logo=ko-fi) [![PyBites/Opentrivia](https://img.shields.io/badge/PyBites%2FOpentrivia-Chat-success?logo=slack&style=for-the-badge)](https://app.slack.com/client/T4SJVFM8C/CMYR582R4)
 
 `THIS PROJECT IS UNDER ACTIVE DEVELOPMENT, README MAY CHANGE EVERY ONCE IN A WHILE`
 
@@ -36,7 +36,7 @@ with development config.
 - Clone the repository
 
 ```bash
-$ git clone https://github.com/code-monk08/opentrivia.git
+$ git clone https://github.com/PyBites-Open-Source/questionnaire-api.git
 ```
 
 - Create the virtualenv and activate it
@@ -204,7 +204,7 @@ feel free to add more functionalities
 endpoint url structure:  **/api/v1/. . .**
 
 ## Credit/Acknowledgment
-[![Contributors](https://img.shields.io/github/contributors/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/PyBites-Open-Source/questionnaire-api?style=for-the-badge)](https://github.com/PyBites-Open-Source/questionnaire-api/graphs/contributors)
 
 ## License
-[![License](https://img.shields.io/github/license/code-monk08/opentrivia?style=for-the-badge)](https://github.com/code-monk08/opentrivia/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/PyBites-Open-Source/questionnaire-api?style=for-the-badge)](https://github.com/PyBites-Open-Source/questionnaire-api/blob/master/LICENSE)
