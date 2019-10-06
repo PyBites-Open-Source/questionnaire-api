@@ -26,3 +26,9 @@ def create_category():
 def update_category(id):
     """ Update category. """
     pass
+
+
+@category_bp.route("/categories/<int:id>", methods=["DELETE"])
+def delete_category(id):
+    """ Delete category. """
+    pass

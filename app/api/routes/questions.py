@@ -26,3 +26,9 @@ def create_question():
 def update_question(id):
     """ Update question. """
     pass
+
+
+@question_bp.route("/questions/<int:id>", methods=["DELETE"])
+def delete_question(id):
+    """ Delete question. """
+    pass
