@@ -44,3 +44,4 @@ class Answer(db.Model):
             "question_id": self.question_id,
             "correct_answer": self.correct_answer,
         }
+        return data
