@@ -42,7 +42,7 @@ $ git clone https://github.com/PyBites-Open-Source/questionnaire-api.git
 - Create the virtualenv and activate it
 
 ```bash
-$ cd opentrivia
+$ cd questionnaire-api
 $ python -m venv virtualenv
 $ source virtualenv/bin/activate # unix
 $ .\virtualenv\Scripts\activate  # windows
