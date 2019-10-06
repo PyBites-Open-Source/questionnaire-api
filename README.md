@@ -21,7 +21,7 @@
 - [License](#license)
 
 ## About
-This will be a free to use, open sourced trivia questions database which has an API implemented in Python3 & Flask using PostgresSQL database, also this will be a source for a minimal quizzing website which will also let contributors add new questions in multiple categories and as MCQ or T/F types. 
+This will be a free to use, open sourced questions database which has an API implemented in Python3 & Flask using PostgresSQL database, also this will be a source for a minimal quizzing website which will also let contributors add new questions in multiple categories and as MCQ or T/F types. 
 
 ## Usage
 To use this project.
