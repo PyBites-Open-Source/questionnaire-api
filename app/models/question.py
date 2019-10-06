@@ -50,4 +50,4 @@ class Question(db.Model):
             "level": self.level,
             "_links": {},
         }
-        return dat
+        return data
