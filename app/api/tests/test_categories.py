@@ -7,6 +7,7 @@ from app import create_app, db
 from app.models.category import Category
 
 
+@unittest.skip("Waiting to be implemented.")
 class TestCategories(unittest.TestCase):
     """
     Test Categories Routes.

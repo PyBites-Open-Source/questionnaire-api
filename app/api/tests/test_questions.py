@@ -9,6 +9,7 @@ from app.models.category import Category
 from app.models.question import Question
 
 
+@unittest.skip("Waiting to be implemented.")
 class TestQuestions(unittest.TestCase):
     """
     Test Questions Routes.
