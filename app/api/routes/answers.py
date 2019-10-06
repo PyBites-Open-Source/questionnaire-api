@@ -16,7 +16,7 @@ def create_answer():
     pass
 
 
-@answer_bp.route("/answer/<int:id>", methods=["PUT"])
+@answer_bp.route("/answers/<int:id>", methods=["PUT"])
 def update_answer(id):
     """ Update answer. """
     pass
