@@ -26,9 +26,3 @@ def create_question():
 def update_question(id):
     """ Update question. """
     pass
-
-
-@question_bp.route("/questions/<int:id>/answers", methods=["GET"])
-def get_question_answers(id):
-    """ Get all the question's answer. """
-    pass
