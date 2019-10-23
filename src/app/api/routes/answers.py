@@ -20,3 +20,9 @@ def create_answer():
 def update_answer(id):
     """ Update answer. """
     pass
+
+
+@answer_bp.route("/answers/<int:id>", methods=["DELETE"])
+def delete_answer(id):
+    """ Delete answer. """
+    pass
