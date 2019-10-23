@@ -5,7 +5,7 @@ This module will contain the routes to our app interface.
 """
 from flask import Blueprint, render_template
 
-from app.models.question import Question
+from app.api.models.question import Question
 
 webapp = Blueprint("webapp", __name__)
 

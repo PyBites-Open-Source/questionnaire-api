@@ -1,6 +1,6 @@
 from app import db
-from app.models.answer import Answer
-from app.models.category import Category
+from app.api.models.answer import Answer
+from app.api.models.category import Category
 
 
 class Question(db.Model):
