@@ -1,9 +1,9 @@
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from flask_swagger_ui import get_swaggerui_blueprint
 
 from config import app_config
-from flask_swagger_ui import get_swaggerui_blueprint
 
 # initialize sql alchemy
 db = SQLAlchemy()
@@ -30,17 +30,18 @@ def create_app(config_name):
     db.init_app(app)  # connects app to db
     migrate = Migrate(app=app, db=db)
 
-    # Import blueprints
-    from app.views import webapp
-    from app.api.routes.questions import question_bp
-    from app.api.routes.answers import answer_bp
-    from app.api.routes.categories import category_bp
+    with app.app_context():
+        # Import blueprints
+        from app.views import webapp
+        from app.api.routes.questions import question_bp
+        from app.api.routes.answers import answer_bp
+        from app.api.routes.categories import category_bp
 
-    # Register blueprints
-    app.register_blueprint(webapp)
-    app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
-    app.register_blueprint(question_bp, url_prefix="/api/v1")
-    app.register_blueprint(answer_bp, url_prefix="/api/v1")
-    app.register_blueprint(category_bp, url_prefix="/api/v1")
+        # Register blueprints
+        app.register_blueprint(webapp)
+        app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
+        app.register_blueprint(question_bp, url_prefix="/api/v1")
+        app.register_blueprint(answer_bp, url_prefix="/api/v1")
+        app.register_blueprint(category_bp, url_prefix="/api/v1")
 
-    return app
+        return app

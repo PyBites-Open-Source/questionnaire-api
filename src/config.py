@@ -28,7 +28,6 @@ class TestingConfig(BaseConfig):
     """Testing Configuration"""
 
     TESTING = True
-    DEBUG = True
     DB_USER = os.getenv("POSTGRES_USER")
     DB_PASSWORD = os.getenv("POSTGRES_PASSWORD")
     DB_DATABASE = os.getenv("POSTGRES_DB_TEST")
