@@ -51,18 +51,18 @@ $ .\virtualenv\Scripts\activate  # windows
 - Instal requirements
 
 ```bash
-$ pip3 install -r requirements.txt
+$ pip3 install -r ./src/requirements.txt
 ```
 - Create database and apply migrations
 
 ```
-$ flask db upgrade
+$ cd src && flask db upgrade
 ```  
 
 - Run the application
 
 ```bash
-$ flask run
+$ cd src && flask run
 ```
 **Production**
 
@@ -71,7 +71,7 @@ In order to use postgresql database ready for production, you need to use docker
 - Setup database 
 
 ```bash
-# create .env file with the following environment variables. 
+# create .env file wihtin src folder with the following environment variables. 
 POSTGRES_USER="trivia"
 POSTGRES_PASSWORD="trivia"
 POSTGRES_DB_PROD="opentrivia_prod"
@@ -86,7 +86,7 @@ DB_HOST="localhost"
 - Run the application
 
 ```bash
-$ docker-compose up
+$ cd src && docker-compose up
 ```
 
 ## File Structure
@@ -94,51 +94,62 @@ $ docker-compose up
 
 ```
 .
-├── app
-│   ├── api
-│   │   ├── __init__.py
-│   │   └── resources.py
-│   ├── __init__.py
-│   ├── models.py
-│   ├── static
-│   │   └── swagger.json
-│   ├── templates
-│   │   ├── base.html
-│   │   ├── developer.html
-│   │   └── home.html
-│   └── views.py
-├── config.py
-├── _config.yml
-├── CONTRIBUTING.md
-├── db
-│   └── init.sql
 ├── docker
 │   ├── api-server
 │   │   └── Dockerfile
 │   └── db-server
 │       └── Dockerfile
-├── docker-compose.yml
-├── instance
-│   └── dev_opentrivia.db
-├── LICENSE
 ├── logo
 │   └── opentrivia.png
-├── manage.py
-├── migrations
-│   ├── alembic.ini
-│   ├── env.py
-│   ├── README
-│   ├── script.py.mako
-│   └── versions
-│       └── d3595c7e8e54_.py
+├── src
+│   ├── app
+│   │   ├── api
+│   │   │   ├── routes
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── answers.py
+│   │   │   │   ├── categories.py
+│   │   │   │   └── questions.py
+│   │   │   ├── tests
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── test_answers.py
+│   │   │   │   ├── test_categories.py
+│   │   │   │   └── test_questions.py
+│   │   │   └── __init__.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── answer.py
+│   │   │   ├── category.py
+│   │   │   └── question.py
+│   │   ├── static
+│   │   │   └── swagger.json
+│   │   ├── templates
+│   │   │   ├── base.html
+│   │   │   ├── developer.html
+│   │   │   └── home.html
+│   │   ├── __init__.py
+│   │   └── views.py
+│   ├── db
+│   │   └── init.sql
+│   ├── instance
+│   │   └── dev_opentrivia.db
+│   ├── migrations
+│   │   ├── versions
+│   │   │   └── 798672a50ee1_.py
+│   │   ├── README
+│   │   ├── alembic.ini
+│   │   ├── env.py
+│   │   └── script.py.mako
+│   ├── tests
+│   │   ├── __init__.py
+│   │   └── test_opentrivia.py
+│   ├── config.py
+│   ├── docker-compose.yml
+│   ├── requirements.txt
+│   └── run.py
+├── CONTRIBUTING.md
+├── LICENSE
 ├── README.md
-├── requirements.txt
-├── run.py
-└── tests
-    ├── __init__.py
-    └── test_opentrivia.py
-
-13 directories, 30 files
+└── _config.yml
 ```
 
 | No | File Name  | Details 

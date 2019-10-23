@@ -4,4 +4,4 @@ FROM postgres
 LABEL maintainer="@code-monk08"
 
 # Add init script
-ADD db/init.sql /docker-entrypoint-initdb.d/
+ADD ./db/init.sql /docker-entrypoint-initdb.d/

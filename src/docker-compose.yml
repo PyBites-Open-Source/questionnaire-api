@@ -3,7 +3,7 @@ services:
     web-server:
         build:
             context: .
-            dockerfile: ./docker/api-server/Dockerfile
+            dockerfile: ../docker/api-server/Dockerfile
         links:
             - db-server
         ports:
@@ -13,7 +13,7 @@ services:
     db-server:
         build:
             context: .
-            dockerfile: ./docker/db-server/Dockerfile
+            dockerfile: ../docker/db-server/Dockerfile
         restart: always
         container_name: db-server
         ports:
