@@ -2,10 +2,11 @@ dist: xenial   # required for Python >= 3.7
 language: python
 python:
     - "3.7"
+before_install: cd src
 # command to install dependencies
 install:
-    - pip install -r requirements.txt
+    - pip install -r ./requirements.txt
 
 # command to run tests
 script:
-    - python -m unittest
+    - python -m unittest -v
