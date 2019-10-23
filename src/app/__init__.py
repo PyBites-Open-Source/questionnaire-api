@@ -32,7 +32,7 @@ def create_app(config_name):
 
     with app.app_context():
         # Import blueprints
-        from app.views import webapp
+        from app.core.views import webapp
         from app.api.routes.questions import question_bp
         from app.api.routes.answers import answer_bp
         from app.api.routes.categories import category_bp
