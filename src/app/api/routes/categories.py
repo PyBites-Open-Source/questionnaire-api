@@ -9,9 +9,7 @@ category_bp = Blueprint("category_api", __name__)
 def get_categories():
     """ Get all categories. """
     categories = Category.query.all()
-    response = {
-        "categories": [category.to_dict() for category in categories],
-    }
+    response = {"categories": [category.to_dict() for category in categories]}
     return make_response(jsonify(response), 200)
 
 
@@ -32,8 +30,7 @@ def create_category():
         data = request.get_json()
         categ = Category(data["name"])
         saved_category = categ.create()
-        message = "New object created."
-        response = {"message": message, "category": saved_category.to_dict()}
+        response = {"category": saved_category.to_dict()}
         return make_response(jsonify(response), 201)
     abort(404)
 
@@ -46,10 +43,7 @@ def update_category(id):
         data = request.get_json()
         category.name = data["name"]
         category.save()
-        response = {
-            "message": "Category has been updated",
-            "category": category.to_dict(),
-        }
+        response = {"category": category.to_dict()}
         return make_response(jsonify(response), 200)
     return make_response(jsonify({"message": "Object not found"}), 404)
 
@@ -62,6 +56,7 @@ def delete_category(id):
         category.delete()
         response = {"message": "Object deleted."}
         return make_response(jsonify(response), 200)
+    abort(404)
 
 
 @category_bp.errorhandler(404)
