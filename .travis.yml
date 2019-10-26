@@ -5,11 +5,7 @@ python:
 services:
     - postgresql
 env:
-    - POSTGRES_USER="trivia"
-    - POSTGRES_PASSWORD="trivia"
-    - POSTGRES_DB_TEST="opentrivia_test"
-    - DB_PORT="5432"
-    - DB_HOST="localhost"
+    - POSTGRES_USER="trivia" POSTGRES_PASSWORD="trivia" POSTGRES_DB_TEST="opentrivia_test" DB_PORT="5432" DB_HOST="localhost"
 before_script:
     - psql --version
     - psql -c 'SELECT version();' -U postgres
