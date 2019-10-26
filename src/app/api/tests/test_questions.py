@@ -34,10 +34,10 @@ class TestQuestions(unittest.TestCase):
         """ Setup question data. """
         category = Category("Test Category").create()
         question1 = Question(
-            "Test Question 1", category.id, "Difficult", False
+            "Test Question 1", category.id, "Hard", False
         ).create()
         question2 = Question(
-            "Test Question 2", category.id, "Difficult", False
+            "Test Question 2", category.id, "Hard", False
         ).create()
 
     def question(self):
@@ -45,7 +45,7 @@ class TestQuestions(unittest.TestCase):
         data = {
             "question": "Test question",
             "category_id": 1,
-            "level": "Difficult",
+            "level": "Easy",
             "true_false_question": False,
         }
         return data

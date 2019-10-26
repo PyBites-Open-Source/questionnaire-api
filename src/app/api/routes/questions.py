@@ -1,4 +1,6 @@
-from flask import Blueprint, make_response, request, jsonify, abort
+from flask import Blueprint, abort, jsonify, make_response, request
+
+from app.api.decorators import questions_validation
 from app.api.models.question import Question
 
 # Define Question Blueprint
@@ -24,6 +26,7 @@ def get_question(id):
 
 
 @question_bp.route("/questions", methods=["POST"])
+@questions_validation
 def create_question():
     """ Create new question. """
     if request.is_json:
@@ -41,6 +44,7 @@ def create_question():
 
 
 @question_bp.route("/questions/<int:id>", methods=["PUT"])
+@questions_validation
 def update_question(id):
     """ Update question. """
     question = Question.query.get(id)

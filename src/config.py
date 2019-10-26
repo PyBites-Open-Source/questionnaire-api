@@ -19,7 +19,7 @@ class DevelopmentConfig(BaseConfig):
     """Development Configuration"""
 
     DEBUG = True
-    INSTANCE_FOLDER = pathlib.Path("instance").mkdir(exist_ok=True)
+    # INSTANCE_FOLDER = pathlib.Path("instance").mkdir(exist_ok=True)
     DATABASE = pathlib.Path(__file__).parent.joinpath("instance/dev_opentrivia.db")
     SQLALCHEMY_DATABASE_URI = f"sqlite:///{DATABASE}"
 
