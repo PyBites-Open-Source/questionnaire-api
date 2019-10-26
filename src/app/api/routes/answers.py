@@ -1,6 +1,7 @@
 from flask import Blueprint, make_response, request, jsonify, abort
 from app.api.models.answer import Answer
 from app.api.models.question import Question
+from app.api.decorators import answers_validation
 
 # Define answer Blueprint
 answer_bp = Blueprint("answer_api", __name__)
@@ -17,6 +18,7 @@ def get_answer(id):
 
 
 @answer_bp.route("/answers", methods=["POST"])
+@answers_validation
 def create_answer():
     """ Create new answer. """
     if request.is_json:
@@ -31,6 +33,7 @@ def create_answer():
 
 
 @answer_bp.route("/answers/<int:id>", methods=["PUT"])
+@answers_validation
 def update_answer(id):
     """ Update answer. """
     answer = Answer.query.get(id)

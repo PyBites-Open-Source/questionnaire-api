@@ -39,3 +39,23 @@ def questions_validation(f):
         return f(*args, **kwargs)
 
     return decorated_function
+
+
+def answers_validation(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if request.is_json:
+            data = request.get_json()
+            message = {"error": "Invalid data"}
+            if type(data["answer"]) != str:
+                message["error"] = "answer must be a string"
+                return make_response(jsonify(message), 400)
+            if type(data["question_id"]) != int:
+                message["error"] = "question_id must be int"
+                return make_response(jsonify(message), 400)
+            if type(data["correct_answer"]) != bool:
+                message["error"] = "correct_answer must be int"
+                return make_response(jsonify(message), 400)
+        return f(*args, **kwargs)
+
+    return decorated_function
