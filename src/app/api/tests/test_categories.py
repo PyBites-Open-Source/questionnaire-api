@@ -7,7 +7,6 @@ from app import create_app, db
 from app.api.models.category import Category
 
 
-@unittest.skip("Waiting to be implemented.")
 class TestCategories(unittest.TestCase):
     """
     Test Categories Routes.
@@ -17,13 +16,12 @@ class TestCategories(unittest.TestCase):
         self.app = create_app("development")
         self.app.testing = True
         self.client = self.app.test_client()
-        self.category = {"name": "Test Category"}
+        self.category = '{"name": "Test Category"}'
 
         with self.app.app_context():
             db.create_all()
-            db.session.commit()
+            self.category_data()
         self.app.app_context().push()
-        self.category_data()
 
     def tearDown(self):
         with self.app.app_context():
@@ -38,44 +36,52 @@ class TestCategories(unittest.TestCase):
     def test_add_new_category(self):
         """ Test add new category route. """
         response = self.client.post(
-            "/api/categories", data=self.category, content_type="application/json"
+            "/api/v1/categories", data=self.category, content_type="application/json"
         )
         self.assertEqual(response.status_code, 201)
         data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("New object created.", data["message"])
+        self.assertEqual("Test Category", data["category"]["name"])
 
     def test_get_a_specific_category(self):
         """ Test get a specific category. """
-        response = self.client.get("/api/categories/1", content_type="application/json")
-        self.assertEqual(response.status_code, 200)
-        data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("Test Category 1", data["name"])
-
-    def test_get_all_categories(self):
-        """ Test get all categories. """
-        response = self.client.get("/api/categories", content_type="application/json")
-        self.assertEqual(response.status_code, 200)
-        data = json.loads(response.get_data(as_text=True))
-        self.assertEqual(2, len(data))
-
-    def test_update_a_category(self):
-        """ Test update a category. """
-        updated_category = {"name": "Update Category"}
-        response = self.client.put(
-            "/api/categories/1", data=updated_category, content_type="application/json"
+        response = self.client.get(
+            "/api/v1/categories/1", content_type="application/json"
         )
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("Update Category", data["name"])
+        self.assertEqual("Test Category 1", data["category"]["name"])
+
+    def test_get_all_categories(self):
+        """ Test get all categories. """
+        response = self.client.get(
+            "/api/v1/categories", content_type="application/json"
+        )
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual(2, len(data["categories"]))
+
+    def test_update_a_category(self):
+        """ Test update a category. """
+        updated_category = '{"name": "Update Category"}'
+        response = self.client.put(
+            "/api/v1/categories/1",
+            data=updated_category,
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual("Update Category", data["category"]["name"])
 
     def test_delete_a_specific_category(self):
         """ Delete a specific category """
         response = self.client.delete(
-            "/api/categories/1", content_type="application/json"
+            "/api/v1/categories/1", content_type="application/json"
         )
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.get_data(as_text=True))
         self.assertEqual("Object deleted.", data["message"])
         # Try to get again the same category
-        response = self.client.get("/api/categories/1", content_type="application/json")
+        response = self.client.get(
+            "/api/v1/categories/1", content_type="application/json"
+        )
         self.assertEqual(response.status_code, 404)

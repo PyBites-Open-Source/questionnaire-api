@@ -22,6 +22,9 @@ class Category(db.Model):
         db.session.commit()
         return self
 
+    def save(self):
+        db.session.commit()
+
     def delete(self):
         db.session.delete(self)
         db.session.commit()

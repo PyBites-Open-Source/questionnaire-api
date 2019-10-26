@@ -41,6 +41,10 @@ class Question(db.Model):
         db.session.delete(self)
         db.session.commit()
 
+    def save(self):
+        """ Save a qustion. """
+        db.session.commit()
+
     def to_dict(self):
         """ Return question details as dict. """
         data = {
