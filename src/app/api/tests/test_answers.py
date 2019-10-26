@@ -15,7 +15,7 @@ class TestAnswers(unittest.TestCase):
     """
 
     def setUp(self):
-        self.app = create_app("development")
+        self.app = create_app("testing")
         self.app.testing = True
         self.client = self.app.test_client()
 
