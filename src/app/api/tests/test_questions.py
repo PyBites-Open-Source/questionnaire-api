@@ -33,12 +33,8 @@ class TestQuestions(unittest.TestCase):
     def questions_data(self):
         """ Setup question data. """
         category = Category("Test Category").create()
-        question1 = Question(
-            "Test Question 1", category.id, "Hard", False
-        ).create()
-        question2 = Question(
-            "Test Question 2", category.id, "Hard", False
-        ).create()
+        question1 = Question("Test Question 1", category.id, "Hard", False).create()
+        question2 = Question("Test Question 2", category.id, "Hard", False).create()
 
     def question(self):
         """ Help method with question data. """
