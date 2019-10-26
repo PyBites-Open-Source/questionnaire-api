@@ -1,4 +1,6 @@
-from flask import Blueprint, request, jsonify, make_response, abort
+from flask import Blueprint, abort, jsonify, make_response, request
+
+from app.api.decorators import categories_validation
 from app.api.models.category import Category
 
 # Define category Blueprint
@@ -24,6 +26,7 @@ def get_category(id):
 
 
 @category_bp.route("/categories", methods=["POST"])
+@categories_validation
 def create_category():
     """ Create new category. """
     if request.is_json:
@@ -36,6 +39,7 @@ def create_category():
 
 
 @category_bp.route("/categories/<int:id>", methods=["PUT"])
+@categories_validation
 def update_category(id):
     """ Update category. """
     category = Category.query.get(id)
