@@ -13,7 +13,7 @@ load_dotenv()
 class TestModels(unittest.TestCase):
     def setUp(self):
         # create a test client
-        self.app = create_app("development")
+        self.app = create_app("testing")
         # propagate the exceptions to the test client
         self.app.testing = True
         # testing client
