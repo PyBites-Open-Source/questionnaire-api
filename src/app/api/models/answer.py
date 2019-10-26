@@ -37,6 +37,10 @@ class Answer(db.Model):
         db.session.delete(self)
         db.session.commit()
 
+    def save(self):
+        """ Save an answer. """
+        db.session.commit()
+
     def to_dict(self):
         """ Return answer details as dict. """
         data = {
