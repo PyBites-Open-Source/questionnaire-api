@@ -9,14 +9,13 @@ from app.api.models.category import Category
 from app.api.models.question import Question
 
 
-@unittest.skip("Waiting to be implemented.")
 class TestAnswers(unittest.TestCase):
     """
     Test Questions Routes.
     """
 
     def setUp(self):
-        self.app = create_app("development")
+        self.app = create_app("testing")
         self.app.testing = True
         self.client = self.app.test_client()
 
@@ -35,54 +34,53 @@ class TestAnswers(unittest.TestCase):
         """ Setup answer data. """
         category = Category("Test Category").create()
         question = Question("Test Question", category.id, "Easy", False).create()
-        answer1 = Answer("Test Answer 1", question.id, False)
-        answer2 = Answer("Test Answer 2", question.id, True)
+        answer1 = Answer("Test Answer 1", question.id, False).create()
+        answer2 = Answer("Test Answer 2", question.id, True).create()
 
     def answer(self):
         """ Help method with answer data. """
-        data = {"answer": "Test Answer", "question_id": "1", "correct_answer": "false"}
+        data = {"answer": "Test Answer", "question_id": 1, "correct_answer": False}
         return data
 
     def test_add_new_answer(self):
         """ Tedd add new answer. """
         response = self.client.post(
-            "/api/answers", data=self.answer(), content_type="application/json"
+            "/api/v1/answers",
+            data=json.dumps(self.answer()),
+            content_type="application/json",
         )
         self.assertEqual(response.status_code, 201)
         data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("New object created.", data["message"])
+        self.assertEqual("Test Answer", data["answer"]["answer"])
 
     def test_get_a_specific_answer(self):
         """ Test get a specific answer. """
-        response = self.client.get("/api/answers/1", content_type="application/json")
+        response = self.client.get("/api/v1/answers/1", content_type="application/json")
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("Test Answer 1", data["answer"])
-
-    def test_get_all_answers(self):
-        """ Test get all answers. """
-        response = self.client.get("/api/answers", content_type="application/json")
-        self.assertEqual(response.status_code, 200)
-        data = json.loads(response.get_data(as_text=True))
-        self.assertEqual(2, len(data))
+        self.assertEqual("Test Answer 1", data["answer"]["answer"])
 
     def test_update_an_answer(self):
         """ Test update an answer. """
         answer = self.answer()
         answer["answer"] = "Updated Answer"
         response = self.client.put(
-            "api/answers/1", data=answer, content_type="application/json"
+            "/api/v1/answers/1",
+            data=json.dumps(answer),
+            content_type="application/json",
         )
         self.assertEqual(response.status_code, 201)
         data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("Updated Answer", data["answer"])
+        self.assertEqual("Updated Answer", data["answer"]["answer"])
 
     def test_delete_an_answer(self):
         """ Test delete an answer. """
-        response = self.client.delete("/api/answers/1", content_type="application/json")
+        response = self.client.delete(
+            "/api/v1/answers/1", content_type="application/json"
+        )
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.get_data(as_text=True))
-        self.assertEqual("Object deleted.", data["message"])
+        self.assertEqual("Object deleted", data["message"])
         # Try again to access the same object
-        response = self.client.get("/api/answers/1", content_type="application/json")
+        response = self.client.get("/api/v1/answers/1", content_type="application/json")
         self.assertEqual(response.status_code, 404)
