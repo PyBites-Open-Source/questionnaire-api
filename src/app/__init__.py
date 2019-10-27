@@ -32,12 +32,14 @@ def create_app(config_name):
 
     with app.app_context():
         # Import blueprints
+        from manage import bp_manage
         from app.core.views import webapp
         from app.api.routes.questions import question_bp
         from app.api.routes.answers import answer_bp
         from app.api.routes.categories import category_bp
 
         # Register blueprints
+        app.register_blueprint(bp_manage)
         app.register_blueprint(webapp)
         app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
         app.register_blueprint(question_bp, url_prefix="/api/v1")
