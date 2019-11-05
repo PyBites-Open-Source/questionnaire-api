@@ -192,22 +192,22 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 `Available Endpoints`
 
 - Questions
-    - [x] Get all Questions
-    - [x] Get Question
-    - [x] Create new Question
-    - [x] Update Question
-    - [x] Delete Question
+    - [x] Get all Questions `GET api/v1/questions`
+    - [x] Get Question `GET api/v1/questions/<id>`
+    - [x] Create new Question `POST api/v1/questions`
+    - [x] Update Question `PUT api/v1/questions/<id>`
+    - [x] Delete Question `DELETE api/v1/questions/<id>`
 - Answers
-    - [x] Get Answer
-    - [x] Create new Answer
-    - [x] Update Answer
-    - [x] Delete Answer
+    - [x] Get Answer `GET api/v1/answers/<id>`
+    - [x] Create new Answer `POST api/v1/answers`
+    - [x] Update Answer `PUT api/v1/answers/<id>`
+    - [x] Delete Answer `DELETE api/v1/answers/<id`
 - Categories
-    - [x] Get all Categories
-    - [x] Get Category
-    - [x] Create new Category
-    - [x] Update Category
-    - [x] Delete Category
+    - [x] Get all Categories `GET api/v1/categories`
+    - [x] Get Category `GET api/v1/categories/<id>`
+    - [x] Create new Category `POST api/v1/categories`
+    - [x] Update Category `PUT GET api/v1/categories/<id>`
+    - [x] Delete Category `DELETE GET api/v1/categories/<id>`
 
 feel free to add more functionalities
 endpoint url structure:  **/api/v1/. . .**
