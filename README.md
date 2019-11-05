@@ -152,13 +152,6 @@ $ cd src && docker-compose up
 └── _config.yml
 ```
 
-| No | File Name  | Details 
-|----|------------|-------|
-| 1  | app\/\_\_init\_\_.py | home for `create_app()` function definition which wraps creation of new flask object and all API endpoints.
-| 2  | app\/models.py | home for models used in `OpenTrivia`. 
-| 3  | app\/views.py | This module will contain the routes to our app interface.
-| 4  | run.py | entry point to start our app.
-| 5  | test_opentrivia.py | home for unit tests for our API.
 
 ## Guideline
 
@@ -196,20 +189,25 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 - [x] http://127.0.0.1:5000/developer   #Developer Page
 - [x] http://127.0.0.1:5000/swagger/    #Swagger UI
 
-`Todo`
-- [ ] Add a question 
-- [ ] Add answer(s) to a question
-- [ ] Update a question
-- [ ] Update answer(s)
-- [ ] Delete a question (along with its answers)
-- [ ] Delete an answer
-- [ ] Get question(s)
-- [ ] Get all question(s) & their answer(s)
-- [ ] Get question category
-- [ ] Get question level (easy \| medium \| hard )
-- [ ] Get type of question (MCQ \| T/F)
+`Available Endpoints`
 
-
+- Questions
+    - [x] Get all Questions
+    - [x] Get Question
+    - [x] Create new Question
+    - [x] Update Question
+    - [x] Delete Question
+- Answers
+    - [x] Get Answer
+    - [x] Create new Answer
+    - [x] Update Answer
+    - [x] Delete Answer
+- Categories
+    - [x] Get all Categories
+    - [x] Get Category
+    - [x] Create new Category
+    - [x] Update Category
+    - [x] Delete Category
 
 feel free to add more functionalities
 endpoint url structure:  **/api/v1/. . .**
