@@ -48,7 +48,7 @@ $ source virtualenv/bin/activate # unix
 $ .\virtualenv\Scripts\activate  # windows
 ```
 
-- Instal requirements
+- Install requirements
 
 ```bash
 $ pip3 install -r ./src/requirements.txt
