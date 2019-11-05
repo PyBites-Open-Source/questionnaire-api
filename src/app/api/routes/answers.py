@@ -45,7 +45,7 @@ def update_answer(id):
         answer.save()
         response = {"answer": answer.to_dict()}
         return make_response(jsonify(response), 201)
-    print("No update answer mothfucker")
+    print("No Update Answer")
     abort(404)
 
 
