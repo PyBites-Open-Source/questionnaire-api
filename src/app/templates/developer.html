@@ -14,19 +14,33 @@
     <ul>
         <li>Questions</li>
         <li>Answers</li>
+        <li>Categories</li>
     </ul>
 
     <h3>Endpoints</h3>
     <p>For each resources you have available the following endpoints:</p>
-    <strong>Question</strong>
+    <h4>Question</h4>
     <ul>
-        <li>api/v1/questions</li>
-        <li>api/v1/questions/&lt;id&gt;</li>
+        <li><strong>GET</strong> api/v1/questions</li>
+        <li><strong>GET</strong> api/v1/questions/&lt;id&gt;</li>
+        <li><strong>POST</strong> api/v1/questions</li>
+        <li><strong>PUT</strong> api/v1/questions/&lt;id&gt;</li>
+        <li><strong>DELETE</strong> api/v1/questions/&lt;id&gt;</li>
     </ul>
-    <strong>Answers</strong>
+    <h4>Answers</h4>
     <ul>
-        <li>api/v1/answers</li>
-        <li>api/v1/answers/&lt;question&gt;</li>
+        <li><strong>GET</strong> api/v1/answers/&lt;id&gt;</li>
+        <li><strong>POST</strong> api/v1/answers</li>
+        <li><strong>PUT</strong> api/v1/answers/&lt;id&gt;</li>
+        <li><strong>DELETE</strong> api/v1/answers/&lt;id&gt;</li>
+    </ul>
+    <h4>Categories</h4>
+    <ul>
+        <li><strong>GET</strong> api/v1/categories</li>
+        <li><strong>GET</strong> api/v1/categories/&lt;id&gt;</li>
+        <li><strong>POST</strong> api/v1/categories</li>
+        <li><strong>PUT</strong> api/v1/categories/&lt;id&gt;</li>
+        <li><strong>DELETE</strong> api/v1/categories/&lt;id&gt;</li>
     </ul>
 </div>
 {% endblock content %}
