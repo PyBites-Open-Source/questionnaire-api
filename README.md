@@ -180,7 +180,9 @@ For more details and available options, please check the [GitHub project](https:
 Close issues using keywords: [how to ?](https://help.github.com/en/articles/closing-issues-using-keywords)
 
 ## Gallery
-`Todo`
+<p align="center">
+  <img src="./logo/swaggerui.png">
+</p>
 
 ## Endpoints
 
