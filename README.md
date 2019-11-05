@@ -192,22 +192,22 @@ Close issues using keywords: [how to ?](https://help.github.com/en/articles/clos
 `Available Endpoints`
 
 - Questions
-    - [x] `GET api/v1/questions` (Get all Questions)
-    - [x] `GET api/v1/questions/<id>` (Get Question)
-    - [x] `POST api/v1/questions` (Create new Question)
-    - [x] `PUT api/v1/questions/<id>` (Update Question)
-    - [x] `DELETE api/v1/questions/<id>` (Delete Question)
+    - [x] `GET api/v1/questions` **(Get all Questions)**
+    - [x] `GET api/v1/questions/<id>` **(Get Question)**
+    - [x] `POST api/v1/questions` **(Create new Question)**
+    - [x] `PUT api/v1/questions/<id>` **(Update Question)**
+    - [x] `DELETE api/v1/questions/<id>` **(Delete Question)**
 - Answers 
-    - [x] `GET api/v1/answers/<id>` (Get Answer)
-    - [x] `POST api/v1/answers` (Create new Answer)
-    - [x] `PUT api/v1/answers/<id>` (Update Answer)
-    - [x] `DELETE api/v1/answers/<id` (Delete Answer)
+    - [x] `GET api/v1/answers/<id>` **(Get Answer)**
+    - [x] `POST api/v1/answers` **(Create new Answer)**
+    - [x] `PUT api/v1/answers/<id>` **(Update Answer)**
+    - [x] `DELETE api/v1/answers/<id` **(Delete Answer)**
 - Categories 
-    - [x] `GET api/v1/categories` (Get all Categories)
-    - [x] `GET api/v1/categories/<id>` (Get Category)
-    - [x] `POST api/v1/categories` (Create new Category)
-    - [x] `PUT GET api/v1/categories/<id>` (Update Category)
-    - [x] `DELETE GET api/v1/categories/<id>` (Delete Category)
+    - [x] `GET api/v1/categories` **(Get all Categories)**
+    - [x] `GET api/v1/categories/<id>` **(Get Category)**
+    - [x] `POST api/v1/categories` **(Create new Category)**
+    - [x] `PUT GET api/v1/categories/<id>` **(Update Category)**
+    - [x] `DELETE GET api/v1/categories/<id>` **(Delete Category)**
 
 feel free to add more functionalities
 endpoint url structure:  **/api/v1/. . .**
